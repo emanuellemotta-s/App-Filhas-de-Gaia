@@ -2,6 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 import styles from '../Cadastro/style';
+import Button from '../Button';
+import Input from '../Input';
+import Logo from '../Logo';
 
 export default function Login({navigation}) {
 
@@ -30,28 +33,14 @@ export default function Login({navigation}) {
     return(
       <View style={styles.container}>
         <StatusBar hidden/>
-        <Image style={{width: 200, height: 200, marginBottom: 30}} source={require('../../assets/logo-removebg-preview.png')}/>
+        <Logo/>
+        <Input texto="E-mail" changeText={text=>setEmail(text)} valor={email}/>
+        <Input texto="Senha" changeText={text=>setSenha(text)} valor={senha} secure={true}/>
+
+
+        <Button text="ENTRAR" press={logar}/>
+        <Button text="FAZER CADASTRO" press={telaCadastro}/>
         
-        <TextInput
-        placeholder='Email'
-        onChangeText={text=>setEmail(text)}
-        style={styles.textInput}
-        value={email}/>
-
-        <TextInput
-        placeholder='Senha'
-        secureTextEntry={true} 
-        onChangeText={text=>setSenha(text)}
-        style={styles.textInput}
-        value={senha}/>
-
-        <TouchableOpacity style={styles.btnCadastro} onPress={logar}>
-            <Text style={{color: 'white', textAlign: 'center'}}>ENTRAR</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.btnCadastro} onPress={telaCadastro}>
-            <Text style={{color: 'white', textAlign: 'center'}}>FAZER CADASTRO</Text>
-        </TouchableOpacity>
       </View>  
     );
 }

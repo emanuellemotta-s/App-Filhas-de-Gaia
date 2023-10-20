@@ -1,7 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { Text, View, Image, TextInput, TouchableOpacity } from 'react-native'; 
+import { View, Image } from 'react-native'; 
 import styles from './style'
+import Button from '../Button';
+import Input from '../Input';
+import Logo from '../Logo';
 export default function Cadastro({navigation}) {
   
   const [email, setEmail] = useState();
@@ -35,40 +38,15 @@ export default function Cadastro({navigation}) {
   return (
     <View style={styles.container}>
       <StatusBar hidden/>
-      <Image style={{width: 200, height: 200, marginBottom: 30}} source={require('../../assets/logo-removebg-preview.png')}/>
-      
-      <TextInput 
-      placeholder="Nome" 
-      style={styles.textInput} 
-      onChangeText={text=>setNome(text)} 
-      value={nome}/>
+      <Logo/>
 
-      <TextInput 
-      placeholder="E-mail" 
-      style={styles.textInput} 
-      onChangeText={text=>setEmail(text)}
-      value={email}/>
+      <Input texto="Nome" changeText={text=>setNome(text)} valor={nome}/>
+      <Input texto="E-mail" changeText={text=>setEmail(text)} valor={email}/>
+      <Input texto="Telefone" changeText={text=>setTelefone(text)} valor={telefone}/>
+      <Input texto="Senha" changeText={text=>setSenha(text)} valor={senha} secure={true}/>
 
-      <TextInput 
-      placeholder="Telefone" 
-      style={styles.textInput} 
-      onChangeText={text=>setTelefone(text)}
-      value={telefone}/>
-
-      <TextInput 
-      secureTextEntry={true} 
-      placeholder="Senha" 
-      style={styles.textInput} 
-      onChangeText={text=>setSenha(text)}
-      value={senha}/>
-
-      <TouchableOpacity style={styles.btnCadastro} onPress={cadastrar}>
-        <Text style={{color:'white', textAlign:'center'}}>CADASTRAR</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.btnCadastro} onPress={telaLogin}>
-        <Text style={{color:'white', textAlign:'center'}}>FAZER LOGIN</Text>
-      </TouchableOpacity>
+      <Button text="CADASTRAR" press={cadastrar}/>
+      <Button text="FAZER LOGIN" press={telaLogin}/>
     </View>
   );
 }
