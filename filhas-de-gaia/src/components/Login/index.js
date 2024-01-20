@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 import styles from '../Cadastro/style';
 import Button from '../Button';
 import Input from '../Input';
@@ -17,6 +17,7 @@ export default function Login({navigation}) {
             routes: [{name: "Cadastro"}]
         })
     }
+
 
     function logar(){
         if(email == null || senha == null){
@@ -40,6 +41,7 @@ export default function Login({navigation}) {
 
         <Button text="ENTRAR" press={logar}/>
         <Button text="FAZER CADASTRO" press={telaCadastro}/>
+        
         
       </View>  
     );
