@@ -3,6 +3,7 @@ import { TouchableOpacity, View, Text } from 'react-native';
 import { StyleSheet } from "react-native";
 import { botao } from './cores';
 
+// mudando no github
 export default function Button(props){
     let a = props.cor
     let b = props.altura 
