@@ -6,7 +6,6 @@ import Login from './src/components/Login/index';
 import { NavigationContainer } from '@react-navigation/native';
 import TelaInicial from './src/components/TelaInicial';
 
-
 const Stack = createStackNavigator();
 
 function MyStack(){
