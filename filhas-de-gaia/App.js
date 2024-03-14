@@ -5,16 +5,20 @@ import Cadastro from './src/components/Cadastro/index';
 import Login from './src/components/Login/index';
 import { NavigationContainer } from '@react-navigation/native';
 import TelaInicial from './src/components/TelaInicial';
+import { ModalPortal } from "react-native-modals";
 
 const Stack = createStackNavigator();
 
 function MyStack(){
   return(
+    <>
     <Stack.Navigator>
       <Stack.Screen name='TelaInicial' component={TelaInicial} screenOptions={{header: {headerShown: false}}}/>
       <Stack.Screen name='Login' component={Login} screenOptions={{header: {headerShown: false}}}/>
       <Stack.Screen name='Cadastro' component={Cadastro} screenOptions={{headerShown: false}}/>
     </Stack.Navigator>
+    <ModalPortal/>
+    </>
   );
 }
 
