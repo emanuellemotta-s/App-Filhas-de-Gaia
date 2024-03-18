@@ -7,6 +7,8 @@ import Habito from './Habito';
 import { primaria, secundaria, botao, habito } from './cores';
 import { BottomModal, ModalTitle, SlideAnimation, ModalContent } from "react-native-modals";
 import { Ionicons, AntDesign, Feather, FontAwesome } from '@expo/vector-icons';
+
+
 export default function TelaInicial() {
     const [option, setOption] = useState("Hoje");
     const [isModalVisible, setModalVisible] = useState(false);

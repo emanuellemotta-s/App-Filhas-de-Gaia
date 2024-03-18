@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 
-const TelaDeHabitos = () => {
+export default function TelaDeHabitos() {
+  
   // Estado para armazenar a lista de hábitos
   const [habitos, setHabitos] = useState([]);
   // Estado para armazenar o valor do novo hábito
@@ -118,4 +119,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TelaDeHabitos;
