@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 
 const App = () => {
