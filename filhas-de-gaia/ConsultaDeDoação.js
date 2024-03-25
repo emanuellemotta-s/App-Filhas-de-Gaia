@@ -1,7 +1,7 @@
 import React { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 
-const App = () => {
+export default function ConsultaDeDoação(){
   const [searchText, setSearchText] = useState('');
 
   const handleSearch = () => {
@@ -38,5 +38,4 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
-
-export default App;
+}
