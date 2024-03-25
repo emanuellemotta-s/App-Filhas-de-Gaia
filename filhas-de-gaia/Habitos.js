@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
+export default function ListHabitos(){
 const HabitList = ({ habits, onEdit, onDelete }) => {
   return (
     <View>
@@ -16,13 +17,12 @@ const HabitList = ({ habits, onEdit, onDelete }) => {
   );
 };
 
-export default HabitList;
-
 //form dos hábitos p/ editar
 
 import React, { useState } from 'react';
 import { View, TextInput, Button } from 'react-native';
 
+export default function FormHabitos(){
 const HabitForm = ({ onSubmit, habitToEdit }) => {
   const [habit, setHabit] = useState(habitToEdit || '');
 
@@ -44,16 +44,14 @@ const HabitForm = ({ onSubmit, habitToEdit }) => {
   );
 };
 
-
-
-export default HabitForm;
-
 //para excluir um hábito
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import HabitForm from './HabitForm';
 import HabitList from './HabitList';
 
+
+export default function FormHabitos(){
 const HabitTracker = () => {
   const [habits, setHabits] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
