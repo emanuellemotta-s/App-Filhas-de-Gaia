@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import TelaInicial from './src/components/TelaInicial';
 import { ModalPortal } from "react-native-modals";
 import TelaDeHabitos from './src/components/TelaDeHabitos';
+import TelaInicialAdm from './src/components/TelaInicialAdm';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ function MyStack(){
   return(
     <>
     <Stack.Navigator>
+      <Stack.Screen name='TelaInicialAdm' component={TelaInicialAdm} screenOptions={{header: {headerShown: false}}}/>
       <Stack.Screen name='TelaDeHabitos' component={TelaDeHabitos} screenOptions={{header: {headerShown: false}}}/>
       <Stack.Screen name='TelaInicial' component={TelaInicial} screenOptions={{header: {headerShown: false}}}/>
       <Stack.Screen name='Login' component={Login} screenOptions={{header: {headerShown: false}}}/>
